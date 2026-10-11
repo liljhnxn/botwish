@@ -51,9 +51,9 @@ Every wish is permanently stored in the `WishVault` smart contract and bound to 
 
 - **Contract Name**: `WishVault`
 - **Contract Source**: `contracts/WishVault.sol`
-- **Deployed Address**: `0x8e4b4a93EbcA09E08c57DfEEc71bAE4468702d57`
+- **Deployed Address**: `0x19F25bDfD4a358A7D2C56c354C1849E7C81De780`
 - **Verification Status**: **Verified (Exact Match)**
-- **Explorer Code Link**: [View Verified Source on Botchain Explorer](https://scan.bohr.life/address/0x8e4b4a93EbcA09E08c57DfEEc71bAE4468702d57#code)
+- **Explorer Code Link**: [View on Botchain Explorer](https://scan.bohr.life/address/0x19F25bDfD4a358A7D2C56c354C1849E7C81De780#code)
 
 ### Data Structure
 ```solidity

@@ -5,7 +5,7 @@ export const BOTCHAIN_RPC_URL = "https://rpc.bohr.life";
 export const WISH_VAULT_CONTRACT_ADDRESS = (
   process.env.NEXT_PUBLIC_WISH_VAULT_ADDRESS ||
   process.env.NEXT_PUBLIC_BOT_WISH_ADDRESS ||
-  ""
+  "0x19F25bDfD4a358A7D2C56c354C1849E7C81De780"
 ) as `0x${string}`;
 
 // Backwards-compatible alias
