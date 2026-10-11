@@ -23,8 +23,8 @@ export default function Home() {
 
   const isContractConfigured = Boolean(
     WISH_VAULT_CONTRACT_ADDRESS &&
-      WISH_VAULT_CONTRACT_ADDRESS.startsWith("0x") &&
-      WISH_VAULT_CONTRACT_ADDRESS.length === 42
+      WISH_VAULT_CONTRACT_ADDRESS.trim().startsWith("0x") &&
+      WISH_VAULT_CONTRACT_ADDRESS.trim().length === 42
   );
 
   const {
