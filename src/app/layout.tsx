@@ -3,8 +3,8 @@ import "./globals.css";
 import { Providers } from "../components/Providers";
 
 export const metadata: Metadata = {
-  title: "BotWish — On-Chain Wishlist on Botchain",
-  description: "Create and track your personal wishlist on Botchain Testnet. Simple, secure, and decentralized.",
+  title: "WishVault — Decentralized On-Chain Wishlist & Goals",
+  description: "Create, lock in, and track your personal wishlist and goals on-chain. Simple, secure, and decentralized.",
 };
 
 export default function RootLayout({

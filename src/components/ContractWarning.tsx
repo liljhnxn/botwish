@@ -12,18 +12,18 @@ export function ContractWarning() {
         </div>
         <div className="flex-1">
           <h2 className="text-base font-semibold text-amber-200">
-            BotWish contract is not configured yet.
+            WishVault contract is not configured yet.
           </h2>
           <p className="text-sm text-amber-300/80 mt-1">
-            To enable full on-chain interaction, deploy the contract to Botchain Testnet and set{" "}
+            To enable full on-chain interaction, deploy the contract and set{" "}
             <code className="px-1.5 py-0.5 rounded bg-amber-950/60 font-mono text-xs text-amber-200 border border-amber-500/20">
-              NEXT_PUBLIC_BOT_WISH_ADDRESS
+              NEXT_PUBLIC_WISH_VAULT_ADDRESS
             </code>{" "}
             in your environment.
           </p>
           <div className="mt-3 flex items-center gap-2 text-xs text-amber-400/90 font-mono bg-black/40 px-3 py-2 rounded-lg border border-amber-500/15">
             <Terminal className="w-3.5 h-3.5 shrink-0" />
-            <span>npm run deploy &amp;&amp; update NEXT_PUBLIC_BOT_WISH_ADDRESS in .env</span>
+            <span>npm run deploy &amp;&amp; update NEXT_PUBLIC_WISH_VAULT_ADDRESS in .env</span>
           </div>
         </div>
       </div>

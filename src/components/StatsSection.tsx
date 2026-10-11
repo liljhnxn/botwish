@@ -28,7 +28,7 @@ export function StatsSection({
         Your wishlist, your journey.
       </h1>
       <p className="mt-3 text-sm sm:text-base text-slate-400 max-w-xl mx-auto">
-        Keep your aspirations immortalized and verifiably completed on the Botchain blockchain.
+        Keep your aspirations immortalized and verifiably completed in your personal on-chain vault.
       </p>
 
       {/* Real on-chain statistics */}

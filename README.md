@@ -1,8 +1,8 @@
-# BotWish — On-Chain Wishlist dApp on Botchain Testnet
+# WishVault — On-Chain Wishlist & Goals dApp on Botchain Testnet
 
-**BotWish** is a simple, elegant, and secure decentralized application (dApp) deployed on **Botchain Testnet**. It enables users to record, track, and verifiably mark their personal life goals and wishes as completed directly on the blockchain.
+**WishVault** is a modern, elegant, and secure decentralized application (dApp) deployed on **Botchain Testnet**. It enables users to record, lock in, track, and verifiably complete their personal life goals and dreams directly on the blockchain.
 
-Every wish is permanently stored in the `BotWish` smart contract and bound to the creator's wallet address. There is no external database, backend, or centralized server: the blockchain is the single source of truth.
+Every wish is permanently stored in the `WishVault` smart contract and bound to the creator's wallet address. There is no external database, backend, or centralized server: the blockchain is the single source of truth.
 
 ---
 
@@ -10,7 +10,7 @@ Every wish is permanently stored in the `BotWish` smart contract and bound to th
 
 - **Wallet Authentication**: Seamless Web3 wallet connection using Wagmi and Viem.
 - **On-Chain Persistence**: Add wishes with titles (up to 80 characters) and optional descriptions (up to 280 characters).
-- **Personal Wishlist Ownership**: Each wallet address exclusively owns its wishlist. Only the owner can mark their wish completed.
+- **Personal Vault Ownership**: Each wallet address exclusively owns its wishlist. Only the owner can mark their wish completed.
 - **Milestone Completion**: Mark any active wish as completed with verifiable on-chain state updates.
 - **Real-Time On-Chain Statistics**: Live count of Total, Completed, and Remaining wishes directly fetched from the smart contract.
 - **Network Awareness**: Automatic detection of wrong networks with one-click switching to Botchain Testnet (Chain ID `968`).
@@ -49,8 +49,8 @@ Every wish is permanently stored in the `BotWish` smart contract and bound to th
 
 ## 📋 Smart Contract Details
 
-- **Contract Name**: `BotWish`
-- **Contract Source**: `contracts/BotWish.sol`
+- **Contract Name**: `WishVault`
+- **Contract Source**: `contracts/WishVault.sol`
 - **Deployed Address**: `0x8e4b4a93EbcA09E08c57DfEEc71bAE4468702d57`
 - **Verification Status**: **Verified (Exact Match)**
 - **Explorer Code Link**: [View Verified Source on Botchain Explorer](https://scan.bohr.life/address/0x8e4b4a93EbcA09E08c57DfEEc71bAE4468702d57#code)
@@ -97,8 +97,8 @@ cp .env.example .env
 
 Configure your environment variables:
 ```ini
-# Deployed BotWish smart contract address on Botchain Testnet
-NEXT_PUBLIC_BOT_WISH_ADDRESS=0x8e4b4a93EbcA09E08c57DfEEc71bAE4468702d57
+# Deployed WishVault smart contract address on Botchain Testnet
+NEXT_PUBLIC_WISH_VAULT_ADDRESS=0x8e4b4a93EbcA09E08c57DfEEc71bAE4468702d57
 
 # Deployer wallet private key (only required when running deploy script)
 PRIVATE_KEY=your_private_key_here
@@ -120,7 +120,7 @@ npm run test
 
 Expected output:
 ```text
-  BotWish
+  WishVault
     addWish
       √ A user can add a wish
       √ The title and description are stored correctly
@@ -156,7 +156,7 @@ To redeploy or deploy a new instance of the contract to Botchain Testnet:
 ```bash
 npm run deploy
 ```
-3. Update `NEXT_PUBLIC_BOT_WISH_ADDRESS` in `.env` with the newly printed contract address.
+3. Update `NEXT_PUBLIC_WISH_VAULT_ADDRESS` in `.env` with the newly printed contract address.
 4. Verify the smart contract source code on Botchain Explorer:
 ```bash
 npm run verify <CONTRACT_ADDRESS>
@@ -185,6 +185,6 @@ npm run start
 ## 🔒 Security & Public Blockchain Notice
 
 > **Important**:
-> All wishlist data (titles, descriptions, timestamps, and wallet addresses) is stored directly on the public **Botchain** blockchain.
+> All wishlist data (titles, descriptions, timestamps, and wallet addresses) is stored directly on the public blockchain.
 > 
 > **Never include sensitive personal data, passwords, private keys, financial information, or confidential credentials in your wishes.** Anything submitted to the blockchain is permanently visible to anyone via block explorers and RPC queries.

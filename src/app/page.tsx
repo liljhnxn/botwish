@@ -9,9 +9,9 @@ import { StatsSection } from "../components/StatsSection";
 import { AddWishForm } from "../components/AddWishForm";
 import { Wishlist } from "../components/Wishlist";
 import { WishData } from "../components/WishCard";
-import { BotWishABI } from "../abi/BotWishABI";
+import { WishVaultABI } from "../abi/WishVaultABI";
 import {
-  BOT_WISH_CONTRACT_ADDRESS,
+  WISH_VAULT_CONTRACT_ADDRESS,
   BOTCHAIN_CHAIN_ID,
   BOTCHAIN_EXPLORER_URL,
   BOTCHAIN_RPC_URL,
@@ -22,9 +22,9 @@ export default function Home() {
   const { address, isConnected } = useAccount();
 
   const isContractConfigured = Boolean(
-    BOT_WISH_CONTRACT_ADDRESS &&
-      BOT_WISH_CONTRACT_ADDRESS.startsWith("0x") &&
-      BOT_WISH_CONTRACT_ADDRESS.length === 42
+    WISH_VAULT_CONTRACT_ADDRESS &&
+      WISH_VAULT_CONTRACT_ADDRESS.startsWith("0x") &&
+      WISH_VAULT_CONTRACT_ADDRESS.length === 42
   );
 
   const {
@@ -32,8 +32,8 @@ export default function Home() {
     isLoading,
     refetch,
   } = useReadContract({
-    address: isContractConfigured ? BOT_WISH_CONTRACT_ADDRESS : undefined,
-    abi: BotWishABI,
+    address: isContractConfigured ? WISH_VAULT_CONTRACT_ADDRESS : undefined,
+    abi: WishVaultABI,
     functionName: "getMyWishes",
     account: address,
     query: {
@@ -73,12 +73,12 @@ export default function Home() {
               <span className="w-2 h-2 rounded-full bg-emerald-400" />
               <span>Contract:</span>
               <a
-                href={`${BOTCHAIN_EXPLORER_URL}/address/${BOT_WISH_CONTRACT_ADDRESS}`}
+                href={`${BOTCHAIN_EXPLORER_URL}/address/${WISH_VAULT_CONTRACT_ADDRESS}`}
                 target="_blank"
                 rel="noreferrer"
                 className="font-mono text-blue-400 hover:underline inline-flex items-center gap-1"
               >
-                <span>{BOT_WISH_CONTRACT_ADDRESS}</span>
+                <span>{WISH_VAULT_CONTRACT_ADDRESS}</span>
                 <ExternalLink className="w-3 h-3" />
               </a>
             </div>
@@ -140,8 +140,8 @@ export default function Home() {
               <Database className="w-4 h-4" />
             </div>
             <div>
-              <p className="font-semibold text-slate-300">BotWish dApp</p>
-              <p className="text-[11px]">Decentralized wishlist protocol on Botchain Testnet</p>
+              <p className="font-semibold text-slate-300">WishVault dApp</p>
+              <p className="text-[11px]">Decentralized goal &amp; wishlist vault on Botchain Testnet</p>
             </div>
           </div>
 

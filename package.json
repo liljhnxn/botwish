@@ -1,7 +1,7 @@
 {
-  "name": "work-23",
+  "name": "wish-vault",
   "version": "1.0.0",
-  "description": "",
+  "description": "WishVault — Decentralized on-chain wishlist and goals on Botchain Testnet",
   "main": "index.js",
   "scripts": {
     "dev": "next dev",

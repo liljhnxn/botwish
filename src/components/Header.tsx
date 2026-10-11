@@ -37,14 +37,14 @@ export function Header() {
           <div>
             <div className="flex items-center gap-2">
               <span className="text-xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-white via-slate-100 to-blue-200 tracking-tight">
-                BotWish
+                WishVault
               </span>
               <span className="text-xs font-semibold px-2 py-0.5 rounded-full bg-blue-900/40 text-blue-300 border border-blue-700/40">
                 dApp
               </span>
             </div>
             <p className="text-xs text-slate-400">
-              Your wishes, secured on Botchain.
+              Your dreams &amp; goals, secured in the vault.
             </p>
           </div>
         </div>

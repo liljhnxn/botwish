@@ -2,7 +2,7 @@ import { ethers, network } from "hardhat";
 
 async function main() {
   console.log("=========================================");
-  console.log("       BotWish Deployment Script         ");
+  console.log("      WishVault Deployment Script        ");
   console.log("=========================================\n");
 
   const [deployer] = await ethers.getSigners();
@@ -23,25 +23,26 @@ async function main() {
     console.warn("WARNING: Deployer account has 0 BOT balance. Deployment will likely fail if gas is required.");
   }
 
-  console.log("\nDeploying BotWish contract...");
-  const BotWishFactory = await ethers.getContractFactory("BotWish");
-  const botWish = await BotWishFactory.deploy();
+  console.log("\nDeploying WishVault contract...");
+  const WishVaultFactory = await ethers.getContractFactory("WishVault");
+  const wishVault = await WishVaultFactory.deploy();
 
-  await botWish.waitForDeployment();
-  const contractAddress = await botWish.getAddress();
+  await wishVault.waitForDeployment();
+  const contractAddress = await wishVault.getAddress();
 
   console.log("\n=========================================");
-  console.log("BotWish Deployed Successfully!");
+  console.log("WishVault Deployed Successfully!");
   console.log(`Contract Address: ${contractAddress}`);
   console.log(`Network Name:     ${networkName}`);
   console.log(`Chain ID:         ${chainId.toString()}`);
   console.log(`Explorer Link:    https://scan.bohr.life/address/${contractAddress}`);
   console.log("=========================================\n");
   console.log("Update your .env file with:");
-  console.log(`NEXT_PUBLIC_BOT_WISH_ADDRESS=${contractAddress}`);
+  console.log(`NEXT_PUBLIC_WISH_VAULT_ADDRESS=${contractAddress}`);
 }
 
 main().catch((error) => {
   console.error("Deployment failed:", error);
   process.exitCode = 1;
 });
+

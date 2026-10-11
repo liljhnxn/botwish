@@ -2,8 +2,8 @@
 
 import React, { useEffect } from "react";
 import { useWriteContract, useWaitForTransactionReceipt } from "wagmi";
-import { BotWishABI } from "../abi/BotWishABI";
-import { BOT_WISH_CONTRACT_ADDRESS, BOTCHAIN_EXPLORER_URL } from "../config/constants";
+import { WishVaultABI } from "../abi/WishVaultABI";
+import { WISH_VAULT_CONTRACT_ADDRESS, BOTCHAIN_EXPLORER_URL } from "../config/constants";
 import { CheckCircle2, Clock, Calendar, Check, Loader2, ExternalLink } from "lucide-react";
 
 export interface WishData {
@@ -45,8 +45,8 @@ export function WishCard({ wish, onCompletedSuccess, isContractConfigured }: Wis
   const handleComplete = () => {
     if (wish.completed || !isContractConfigured) return;
     writeContract({
-      address: BOT_WISH_CONTRACT_ADDRESS,
-      abi: BotWishABI,
+      address: WISH_VAULT_CONTRACT_ADDRESS,
+      abi: WishVaultABI,
       functionName: "completeWish",
       args: [wish.id],
     });

@@ -2,10 +2,10 @@
 pragma solidity ^0.8.24;
 
 /**
- * @title BotWish
- * @notice A simple, beginner-friendly on-chain wishlist smart contract for Botchain Testnet.
+ * @title WishVault
+ * @notice A secure, decentralized on-chain vault for dreams, wishes, and goals.
  */
-contract BotWish {
+contract WishVault {
     // Custom Errors
     error EmptyTitle();
     error TitleTooLong();
@@ -15,7 +15,7 @@ contract BotWish {
     error WishAlreadyCompleted();
     error InvalidWishIndex();
 
-    // Struct definition as specified
+    // Struct definition
     struct Wish {
         uint256 id;
         address owner;

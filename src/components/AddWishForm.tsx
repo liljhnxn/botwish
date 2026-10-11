@@ -2,9 +2,9 @@
 
 import React, { useState, useEffect } from "react";
 import { useAccount, useWriteContract, useWaitForTransactionReceipt } from "wagmi";
-import { BotWishABI } from "../abi/BotWishABI";
+import { WishVaultABI } from "../abi/WishVaultABI";
 import {
-  BOT_WISH_CONTRACT_ADDRESS,
+  WISH_VAULT_CONTRACT_ADDRESS,
   BOTCHAIN_EXPLORER_URL,
   MAX_TITLE_LENGTH,
   MAX_DESCRIPTION_LENGTH,
@@ -72,13 +72,13 @@ export function AddWishForm({ onWishAdded, isContractConfigured }: AddWishFormPr
     }
 
     if (!isContractConfigured) {
-      setValidationError("BotWish contract is not configured yet.");
+      setValidationError("WishVault contract is not configured yet.");
       return;
     }
 
     writeContract({
-      address: BOT_WISH_CONTRACT_ADDRESS,
-      abi: BotWishABI,
+      address: WISH_VAULT_CONTRACT_ADDRESS,
+      abi: WishVaultABI,
       functionName: "addWish",
       args: [trimmedTitle, description],
     });
@@ -95,7 +95,7 @@ export function AddWishForm({ onWishAdded, isContractConfigured }: AddWishFormPr
         <div>
           <h2 className="text-lg font-bold text-white">Make a New Wish</h2>
           <p className="text-xs text-slate-400">
-            Write your aspiration to the Botchain blockchain.
+            Write your aspiration into the on-chain vault.
           </p>
         </div>
       </div>
