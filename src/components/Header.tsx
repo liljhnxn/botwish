@@ -63,9 +63,26 @@ export function Header() {
               }`}
             />
             <span className="text-slate-300 font-medium">
-              {isWrongNetwork ? "Wrong Network" : "Botchain Testnet"}
+              {isWrongNetwork ? "Wrong Network" : "BotChain Mainnet"}
             </span>
           </div>
+
+          {/* Mainnet Explorer Link */}
+          <a
+            href={BOTCHAIN_EXPLORER_URL}
+            target="_blank"
+            rel="noreferrer"
+            title="Open BOT Chain Mainnet Explorer"
+            className="hidden md:inline-flex items-center gap-2 px-3 py-1.5 rounded-lg bg-slate-900/80 hover:bg-slate-800 border border-slate-800 hover:border-slate-700 text-xs text-slate-300 hover:text-white transition-colors"
+          >
+            <img
+              src="/botchain-logo.png"
+              alt="BOT Chain Logo"
+              className="w-3.5 h-3.5 rounded-sm object-contain"
+            />
+            <span className="font-medium">Mainnet Explorer</span>
+            <ExternalLink className="w-3 h-3 text-slate-500" />
+          </a>
 
           {/* Wallet Actions */}
           {!isConnected ? (
@@ -90,7 +107,7 @@ export function Header() {
               className="inline-flex items-center gap-2 px-4 py-2 rounded-xl text-sm font-medium bg-amber-500/20 hover:bg-amber-500/30 text-amber-300 border border-amber-500/40 transition-colors"
             >
               <AlertCircle className="w-4 h-4" />
-              <span>Switch to Botchain</span>
+              <span>Switch to BotChain Mainnet</span>
             </button>
           ) : (
             <div className="flex items-center gap-2">
@@ -113,7 +130,7 @@ export function Header() {
                 href={`${BOTCHAIN_EXPLORER_URL}/address/${address}`}
                 target="_blank"
                 rel="noreferrer"
-                title="View on Botchain Explorer"
+                title="View on BotChain Mainnet Explorer"
                 className="p-2 rounded-xl bg-slate-900/90 border border-slate-700/80 hover:border-slate-600 text-slate-400 hover:text-slate-200 transition-colors"
               >
                 <ExternalLink className="w-4 h-4" />

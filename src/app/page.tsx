@@ -8,15 +8,17 @@ import { NetworkWarning } from "../components/NetworkWarning";
 import { StatsSection } from "../components/StatsSection";
 import { AddWishForm } from "../components/AddWishForm";
 import { Wishlist } from "../components/Wishlist";
+import { EcosystemSection } from "../components/EcosystemSection";
 import { WishData } from "../components/WishCard";
 import { WishVaultABI } from "../abi/WishVaultABI";
 import {
   WISH_VAULT_CONTRACT_ADDRESS,
   BOTCHAIN_CHAIN_ID,
+  BOTCHAIN_WEBSITE_URL,
   BOTCHAIN_EXPLORER_URL,
   BOTCHAIN_RPC_URL,
 } from "../config/constants";
-import { ExternalLink, ShieldCheck, Database, Cpu } from "lucide-react";
+import { ExternalLink, ShieldCheck, Database, Cpu, Globe } from "lucide-react";
 
 export default function Home() {
   const { address, isConnected } = useAccount();
@@ -82,9 +84,26 @@ export default function Home() {
                 <ExternalLink className="w-3 h-3" />
               </a>
             </div>
-            <div className="flex items-center gap-4 text-[11px] text-slate-500">
-              <span>Chain ID: {BOTCHAIN_CHAIN_ID}</span>
-              <span>Network: Botchain Testnet</span>
+            <div className="flex items-center gap-3 text-xs">
+              <a
+                href={`${BOTCHAIN_EXPLORER_URL}/address/${WISH_VAULT_CONTRACT_ADDRESS}`}
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-blue-500/10 hover:bg-blue-500/20 text-blue-400 border border-blue-500/30 font-medium transition-colors"
+                title="View contract on BOT Chain Mainnet Explorer"
+              >
+                <img
+                  src="/botchain-logo.png"
+                  alt="BOT Chain Logo"
+                  className="w-3.5 h-3.5 rounded-sm object-contain"
+                />
+                <span>Mainnet Explorer</span>
+                <ExternalLink className="w-3 h-3" />
+              </a>
+              <div className="flex items-center gap-3 text-[11px] text-slate-500">
+                <span>Chain ID: {BOTCHAIN_CHAIN_ID}</span>
+                <span>Network: BotChain Mainnet</span>
+              </div>
             </div>
           </div>
         )}
@@ -130,40 +149,90 @@ export default function Home() {
             />
           </div>
         </div>
+
+        {/* Ecosystem Section */}
+        <EcosystemSection />
       </main>
 
       {/* Footer */}
-      <footer className="border-t border-slate-800/80 bg-slate-950/80 py-8 mt-16 text-xs text-slate-500">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4">
-          <div className="flex items-center gap-3">
-            <div className="p-1.5 rounded-lg bg-blue-600/20 text-blue-400">
-              <Database className="w-4 h-4" />
+      <footer className="border-t border-slate-800/80 bg-slate-950/90 py-10 mt-20 text-xs text-slate-500">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 space-y-6">
+          <div className="flex flex-col md:flex-row items-center justify-between gap-6 pb-6 border-b border-slate-800/60">
+            {/* App Branding */}
+            <div className="flex items-center gap-3">
+              <div className="p-2 rounded-xl bg-blue-600/20 text-blue-400">
+                <Database className="w-5 h-5" />
+              </div>
+              <div>
+                <p className="font-semibold text-slate-200 text-sm">WishVault dApp</p>
+                <p className="text-[11px] text-slate-400">
+                  Decentralized goal &amp; wishlist vault built on BOT Chain
+                </p>
+              </div>
             </div>
-            <div>
-              <p className="font-semibold text-slate-300">WishVault dApp</p>
-              <p className="text-[11px]">Decentralized goal &amp; wishlist vault on Botchain Testnet</p>
+
+            {/* BOT Chain Ecosystem Links */}
+            <div className="flex flex-wrap items-center justify-center gap-4 sm:gap-6 text-slate-300">
+              {/* BOT Chain Logo & Name */}
+              <div className="flex items-center gap-2 px-3 py-1.5 rounded-xl bg-slate-900 border border-slate-800 text-slate-200">
+                <img
+                  src="/botchain-logo.png"
+                  alt="BOT Chain Logo"
+                  className="w-5 h-5 rounded-md object-contain bg-black p-0.5"
+                />
+                <span className="font-semibold text-xs tracking-tight">BOT Chain</span>
+              </div>
+
+              {/* BOT Chain Website Link with Logo at the front */}
+              <a
+                href={BOTCHAIN_WEBSITE_URL}
+                target="_blank"
+                rel="noreferrer"
+                id="footer-botchain-website"
+                className="hover:text-blue-400 transition-colors inline-flex items-center gap-2 font-medium"
+              >
+                <img
+                  src="/botchain-logo.png"
+                  alt="BOT Chain Logo"
+                  className="w-4 h-4 rounded-sm object-contain"
+                />
+                <span>BOT Chain website: https://botchain.ai</span>
+                <ExternalLink className="w-3 h-3 text-slate-500" />
+              </a>
+
+              {/* BOT Chain Explorer Link with Logo at the front */}
+              <a
+                href={BOTCHAIN_EXPLORER_URL}
+                target="_blank"
+                rel="noreferrer"
+                id="footer-botchain-explorer"
+                className="hover:text-cyan-400 transition-colors inline-flex items-center gap-2 font-medium"
+              >
+                <img
+                  src="/botchain-logo.png"
+                  alt="BOT Chain Logo"
+                  className="w-4 h-4 rounded-sm object-contain"
+                />
+                <span>BOT Chain explorer: https://scan.botchain.ai</span>
+                <ExternalLink className="w-3 h-3 text-slate-500" />
+              </a>
             </div>
           </div>
 
-          <div className="flex items-center gap-4 text-slate-400">
-            <a
-              href={BOTCHAIN_RPC_URL}
-              target="_blank"
-              rel="noreferrer"
-              className="hover:text-blue-400 transition-colors inline-flex items-center gap-1"
-            >
-              <Cpu className="w-3.5 h-3.5" />
-              <span>RPC</span>
-            </a>
-            <a
-              href={BOTCHAIN_EXPLORER_URL}
-              target="_blank"
-              rel="noreferrer"
-              className="hover:text-blue-400 transition-colors inline-flex items-center gap-1"
-            >
-              <span>Explorer</span>
-              <ExternalLink className="w-3 h-3" />
-            </a>
+          {/* Bottom Copyright & RPC */}
+          <div className="flex flex-col sm:flex-row items-center justify-between gap-3 text-[11px] text-slate-500">
+            <p>© {new Date().getFullYear()} WishVault. Immutable on-chain life milestones.</p>
+            <div className="flex items-center gap-4">
+              <span>Chain ID: {BOTCHAIN_CHAIN_ID}</span>
+              <a
+                href={BOTCHAIN_RPC_URL}
+                target="_blank"
+                rel="noreferrer"
+                className="hover:text-slate-400 transition-colors"
+              >
+                Mainnet RPC: {BOTCHAIN_RPC_URL}
+              </a>
+            </div>
           </div>
         </div>
       </footer>

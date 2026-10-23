@@ -207,7 +207,7 @@ export function AddWishForm({ onWishAdded, isContractConfigured }: AddWishFormPr
                 rel="noreferrer"
                 className="inline-flex items-center gap-1 text-[11px] text-indigo-200 hover:underline font-mono"
               >
-                <span>View on Botchain Explorer</span>
+                <span>View on BotChain Mainnet Explorer</span>
                 <ExternalLink className="w-3 h-3" />
               </a>
             </div>

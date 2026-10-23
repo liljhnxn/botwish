@@ -1,7 +1,7 @@
 {
   "name": "wish-vault",
   "version": "1.0.0",
-  "description": "WishVault — Decentralized on-chain wishlist and goals on Botchain Testnet",
+  "description": "WishVault — Decentralized on-chain wishlist and goals on BotChain Mainnet",
   "main": "index.js",
   "scripts": {
     "dev": "next dev",
@@ -9,8 +9,9 @@
     "start": "next start",
     "compile": "hardhat compile",
     "test": "hardhat test",
-    "deploy": "hardhat run scripts/deploy.ts --network botchainTestnet",
-    "verify": "hardhat verify --network botchainTestnet"
+    "deploy": "hardhat run scripts/deploy.ts --network botchainMainnet",
+    "deploy:mainnet": "node scripts/deploy-mainnet.js",
+    "verify": "hardhat verify --network botchainMainnet"
   },
   "keywords": [],
   "author": "",

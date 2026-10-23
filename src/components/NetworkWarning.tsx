@@ -26,7 +26,7 @@ export function NetworkWarning() {
               Incorrect Network Detected
             </h2>
             <p className="text-xs sm:text-sm text-rose-300/80 mt-0.5">
-              Please switch your wallet to Botchain Testnet (Chain ID: {BOTCHAIN_CHAIN_ID}) to interact with your wishlist.
+              Please switch your wallet to BotChain Mainnet (Chain ID: {BOTCHAIN_CHAIN_ID}) to interact with your wishlist.
             </p>
           </div>
         </div>
@@ -37,7 +37,7 @@ export function NetworkWarning() {
           className="inline-flex items-center justify-center gap-2 px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold bg-rose-600 hover:bg-rose-500 text-white shadow-lg transition-all disabled:opacity-50"
         >
           <RefreshCw className={`w-3.5 h-3.5 ${isPending ? "animate-spin" : ""}`} />
-          <span>{isPending ? "Switching..." : "Switch to Botchain"}</span>
+          <span>{isPending ? "Switching..." : "Switch to BotChain Mainnet"}</span>
         </button>
       </div>
     </div>

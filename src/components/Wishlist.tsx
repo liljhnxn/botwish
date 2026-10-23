@@ -98,7 +98,7 @@ export function Wishlist({
           </div>
           <h3 className="text-base font-semibold text-slate-200">Connect your wallet</h3>
           <p className="text-xs sm:text-sm text-slate-400 max-w-sm mx-auto mt-1 mb-4">
-            Connect your Web3 wallet to read your personal wishlist stored on the Botchain Testnet.
+            Connect your Web3 wallet to read your personal wishlist stored on the BotChain Mainnet.
           </p>
           <button
             onClick={() => {
@@ -114,7 +114,7 @@ export function Wishlist({
       ) : isLoading ? (
         <div className="rounded-2xl border border-slate-800 bg-slate-900/40 p-10 text-center">
           <RefreshCw className="w-8 h-8 text-blue-400 animate-spin mx-auto mb-3" />
-          <h3 className="text-base font-medium text-slate-200">Querying Botchain Testnet...</h3>
+          <h3 className="text-base font-medium text-slate-200">Querying BotChain Mainnet...</h3>
           <p className="text-xs text-slate-400 mt-1">Reading smart contract state</p>
         </div>
       ) : wishes.length === 0 ? (

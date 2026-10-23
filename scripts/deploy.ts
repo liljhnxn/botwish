@@ -35,7 +35,7 @@ async function main() {
   console.log(`Contract Address: ${contractAddress}`);
   console.log(`Network Name:     ${networkName}`);
   console.log(`Chain ID:         ${chainId.toString()}`);
-  console.log(`Explorer Link:    https://scan.bohr.life/address/${contractAddress}`);
+  console.log(`Explorer Link:    https://scan.botchain.ai/address/${contractAddress}`);
   console.log("=========================================\n");
   console.log("Update your .env file with:");
   console.log(`NEXT_PUBLIC_WISH_VAULT_ADDRESS=${contractAddress}`);
